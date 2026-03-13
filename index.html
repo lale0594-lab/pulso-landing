@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PULSO — Cada latido cuenta.</title>
 <meta name="description" content="La plataforma de gestión fitness más inteligente para LATAM.">
-<meta property="og:title" content="PULSO — Cada latido cuenta.">
-<meta property="og:image" content="/og-image.png">
 <meta name="theme-color" content="#07010A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -26,7 +24,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn svg{width:18px;height:18px;flex-shrink:0}
 .btn-lg{font-size:1rem;padding:1rem 2.5rem}
 .btn-lg svg{width:22px;height:22px}
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 2rem 5rem;position:relative;overflow:hidden}
 .hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(255,23,68,.09) 0%,transparent 65%);pointer-events:none;animation:breathe 5s ease-in-out infinite}
 @keyframes breathe{0%,100%{opacity:.7;transform:translate(-50%,-55%) scale(1)}50%{opacity:1;transform:translate(-50%,-55%) scale(1.1)}}
@@ -34,83 +31,157 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .dot{width:5px;height:5px;border-radius:50%;background:var(--red);animation:blink 1.5s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
 h1{font-size:clamp(3.2rem,9vw,8rem);font-weight:900;line-height:.92;letter-spacing:-.035em;margin-bottom:1.5rem}
-h1 .w{color:var(--white)}
-h1 .r{color:var(--red)}
+h1 .w{color:var(--white)}h1 .r{color:var(--red)}
 .hero-sub{font-size:clamp(.95rem,2vw,1.15rem);font-weight:300;color:var(--lgrey);max-width:500px;margin:0 auto 3rem;line-height:1.75}
 .hero-actions{display:flex;flex-direction:column;align-items:center;gap:.9rem}
 .hero-hint{font-size:.75rem;color:var(--grey);letter-spacing:.05em}
-/* EKG */
 .ekg-wrap{width:100%;max-width:900px;margin:3.5rem auto 0;height:70px;opacity:.65}
 canvas#ekg{width:100%;height:100%}
-/* SECTIONS */
 section{padding:7rem 2rem}
 .container{max-width:1100px;margin:0 auto}
 .slabel{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:.8rem}
 h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:1.2rem}
 .ssub{font-size:.95rem;color:var(--lgrey);max-width:480px;line-height:1.75}
-/* WHO */
 .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:4rem;background:rgba(255,23,68,.1)}
 @media(max-width:768px){.who-grid{grid-template-columns:1fr}}
-.who-card{background:var(--bg);padding:2.5rem;position:relative;transition:background .3s;border-left:3px solid transparent;transition:border-color .3s,background .3s}
+.who-card{background:var(--bg);padding:2.5rem;border-left:3px solid transparent;transition:border-color .3s,background .3s}
 .who-card:hover{background:var(--dim);border-left-color:var(--red)}
 .who-icon{font-size:2rem;margin-bottom:1.2rem;display:block}
-.who-title{font-size:1.15rem;font-weight:700;margin-bottom:.4rem;letter-spacing:-.02em}
+.who-title{font-size:1.15rem;font-weight:700;margin-bottom:.4rem}
 .who-sub{font-size:.85rem;color:var(--lgrey);line-height:1.65;margin-bottom:1.2rem}
 .wfeat{display:flex;flex-direction:column;gap:.45rem}
 .wf{font-size:.78rem;color:var(--grey);display:flex;align-items:center;gap:.5rem}
 .wf::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0}
-/* FEAT */
 .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:4rem;background:rgba(255,255,255,.04)}
 @media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:500px){.feat-grid{grid-template-columns:1fr}}
 .fc{background:var(--bg);padding:2rem 1.8rem;transition:background .25s}
 .fc:hover{background:var(--dim)}
 .fc-num{font-size:.68rem;font-weight:700;letter-spacing:.14em;color:var(--red);margin-bottom:.9rem}
-.fc-title{font-size:1rem;font-weight:700;margin-bottom:.35rem;letter-spacing:-.01em}
+.fc-title{font-size:1rem;font-weight:700;margin-bottom:.35rem}
 .fc-desc{font-size:.8rem;color:var(--lgrey);line-height:1.6}
-/* INSTALL */
-.install-bg{background:var(--dim)}
-.igrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;margin-top:3.5rem;background:rgba(255,23,68,.08)}
-@media(max-width:620px){.igrid{grid-template-columns:1fr}}
-.ic{background:var(--dim);padding:2.5rem}
-.ios-label{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
-.isteps{display:flex;flex-direction:column;gap:1rem}
-.istep{display:flex;gap:.9rem;align-items:flex-start}
-.sn{width:22px;height:22px;border-radius:50%;background:rgba(255,23,68,.12);border:1px solid rgba(255,23,68,.25);color:var(--red);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
-.st{font-size:.83rem;color:var(--lgrey);line-height:1.55}
-.st strong{color:var(--white);font-weight:600}
-.icta{margin-top:3rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;text-align:center}
-.iurl{font-size:.75rem;color:var(--grey);font-family:monospace;letter-spacing:.05em}
-/* STATS */
 .sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:4rem;background:rgba(255,255,255,.04);text-align:center}
 @media(max-width:700px){.sgrid{grid-template-columns:repeat(2,1fr)}}
 .sc{background:var(--bg);padding:2.5rem 2rem}
 .sn2{font-size:3rem;font-weight:900;letter-spacing:-.04em;color:var(--red);line-height:1;margin-bottom:.35rem}
 .sl{font-size:.72rem;color:var(--lgrey);letter-spacing:.08em;text-transform:uppercase}
-/* CTA */
 .cta-s{text-align:center;padding:9rem 2rem;position:relative;overflow:hidden}
 .cta-s::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:400px;background:radial-gradient(ellipse,rgba(255,23,68,.07) 0%,transparent 65%);pointer-events:none}
-.cta-s h2{font-size:clamp(2.5rem,7vw,6rem)}
-.cta-sub{font-size:.95rem;color:var(--lgrey);margin-bottom:3rem;font-weight:300}
-/* DIVIDERS */
 .rdiv{height:1px;background:linear-gradient(90deg,transparent,rgba(255,23,68,.2),transparent)}
 .rline{height:2px;background:linear-gradient(90deg,transparent,var(--red),transparent);opacity:.5}
-/* FOOTER */
 footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.2rem;text-align:center}
-.flogo{font-size:1.3rem;font-weight:900;letter-spacing:-.02em}
+.flogo{font-size:1.3rem;font-weight:900}
 .flogo em{color:var(--white);font-style:normal}.flogo b{color:var(--red)}
 .flinks{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
 .flinks a{font-size:.75rem;color:var(--grey);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
 .flinks a:hover{color:var(--red)}
 .fcopy{font-size:.7rem;color:rgba(110,98,120,.55)}
-/* REVEAL */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .rv.on{opacity:1;transform:none}
-/* RESPONSIVE NAV */
 @media(max-width:700px){.nav-links{display:none}nav{padding:1rem 1.5rem}}
+.install-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;margin-top:3.5rem;background:rgba(255,23,68,.08)}
+@media(max-width:600px){.install-cards{grid-template-columns:1fr}}
+.install-card{background:var(--dim);padding:2rem}
+.ic-label{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:1rem}
+.ic-text{font-size:.83rem;color:var(--lgrey);line-height:1.7}
+.ic-text strong{color:var(--white)}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#0E060F;border:1px solid rgba(255,23,68,.25);max-width:520px;width:100%;transform:translateY(20px) scale(.97);transition:transform .25s ease;max-height:88vh;overflow-y:auto;display:flex;flex-direction:column}
+.modal-overlay.open .modal{transform:none}
+.modal-head{padding:1.6rem 1.8rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#0E060F;z-index:1;flex-shrink:0}
+.modal-head-title{font-size:1.05rem;font-weight:700}
+.modal-x{background:none;border:none;color:var(--grey);font-size:1.6rem;line-height:1;cursor:pointer;padding:0 .2rem;transition:color .2s;font-family:sans-serif}
+.modal-x:hover{color:var(--white)}
+.mtabs{display:flex;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
+.mtab{flex:1;padding:.85rem .4rem;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;color:var(--grey);transition:color .2s,border-color .2s;font-family:'Poppins',sans-serif}
+.mtab.on{color:var(--red);border-bottom-color:var(--red)}
+.mtab:hover:not(.on){color:var(--lgrey)}
+.mbody{padding:1.8rem;overflow-y:auto}
+.tpanel{display:none}
+.tpanel.on{display:block}
+.msteps{display:flex;flex-direction:column;gap:1rem}
+.mstep{display:flex;gap:.85rem;align-items:flex-start}
+.mnum{width:24px;height:24px;border-radius:50%;flex-shrink:0;background:rgba(255,23,68,.12);border:1px solid rgba(255,23,68,.28);color:var(--red);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:.15rem}
+.mtxt{font-size:.85rem;color:var(--lgrey);line-height:1.6}
+.mtxt strong{color:var(--white);font-weight:600}
+.mnote{font-size:.72rem;color:var(--grey);background:rgba(255,23,68,.06);border-left:2px solid rgba(255,23,68,.3);padding:.55rem .8rem;margin-top:1rem;line-height:1.55}
+.mcta{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.murl{font-size:.75rem;color:var(--grey);font-family:monospace}
 </style>
 </head>
 <body>
+
+<!-- MODAL INSTALACIÓN -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-head-title">Instalar PULSO</span>
+      <button class="modal-x" onclick="closeModal()">×</button>
+    </div>
+    <div class="mtabs">
+      <button class="mtab on" id="tb-android" onclick="tab('android')">📱 Android</button>
+      <button class="mtab" id="tb-iphone" onclick="tab('iphone')">🍎 iPhone</button>
+      <button class="mtab" id="tb-pc" onclick="tab('pc')">💻 PC / Mac</button>
+    </div>
+    <div class="mbody">
+
+      <div class="tpanel on" id="tp-android">
+        <div class="msteps">
+          <div class="mstep"><div class="mnum">1</div><div class="mtxt">Abre <strong>Chrome</strong> en tu Android y visita <strong>pulsofitapp.lovable.app</strong></div></div>
+          <div class="mstep"><div class="mnum">2</div><div class="mtxt">Aparece un banner <strong>"Instalar PULSO"</strong> en la parte inferior de la pantalla</div></div>
+          <div class="mstep"><div class="mnum">3</div><div class="mtxt">Si no aparece, toca los <strong>tres puntos ⋮</strong> arriba a la derecha → <strong>"Instalar app"</strong></div></div>
+          <div class="mstep"><div class="mnum">4</div><div class="mtxt">Toca <strong>"Instalar"</strong> — el ícono aparece en tu pantalla de inicio</div></div>
+        </div>
+        <div class="mnote">⚠️ Usa Chrome. En Samsung Browser u otros navegadores no aparece la opción.</div>
+        <div class="mcta">
+          <a class="btn btn-lg" href="https://pulsofitapp.lovable.app" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Abrir en Chrome
+          </a>
+          <span class="murl">pulsofitapp.lovable.app</span>
+        </div>
+      </div>
+
+      <div class="tpanel" id="tp-iphone">
+        <div class="msteps">
+          <div class="mstep"><div class="mnum">1</div><div class="mtxt">Abre <strong>Safari</strong> (obligatorio) y visita <strong>pulsofitapp.lovable.app</strong></div></div>
+          <div class="mstep"><div class="mnum">2</div><div class="mtxt">Toca el ícono <strong>⎋ compartir</strong> — cuadrado con flecha, barra inferior de Safari</div></div>
+          <div class="mstep"><div class="mnum">3</div><div class="mtxt">Desliza la lista y toca <strong>"Agregar a pantalla de inicio"</strong></div></div>
+          <div class="mstep"><div class="mnum">4</div><div class="mtxt">Toca <strong>"Agregar"</strong> — el ícono aparece en tu pantalla de inicio</div></div>
+        </div>
+        <div class="mnote">⚠️ Solo funciona en Safari. Apple no permite instalar desde Chrome en iPhone.</div>
+        <div class="mcta">
+          <a class="btn btn-lg" href="https://pulsofitapp.lovable.app" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Abrir en Safari
+          </a>
+          <span class="murl">pulsofitapp.lovable.app</span>
+        </div>
+      </div>
+
+      <div class="tpanel" id="tp-pc">
+        <div class="msteps">
+          <div class="mstep"><div class="mnum">1</div><div class="mtxt">Abre <strong>Chrome</strong> o <strong>Edge</strong> y visita <strong>pulsofitapp.lovable.app</strong></div></div>
+          <div class="mstep"><div class="mnum">2</div><div class="mtxt">Busca el ícono <strong>⊕</strong> en el lado derecho de la barra de direcciones</div></div>
+          <div class="mstep"><div class="mnum">3</div><div class="mtxt">Haz click y selecciona <strong>"Instalar PULSO"</strong></div></div>
+          <div class="mstep"><div class="mnum">4</div><div class="mtxt">PULSO se abre como app independiente sin barras del navegador</div></div>
+        </div>
+        <div class="mnote">💡 Si no aparece el ícono ⊕ aún, la app está en proceso de configuración PWA.</div>
+        <div class="mcta">
+          <a class="btn btn-lg" href="https://pulsofitapp.lovable.app" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Abrir la app
+          </a>
+          <span class="murl">pulsofitapp.lovable.app</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <nav>
   <a class="logo" href="/"><em>PUL</em><b>SO</b></a>
@@ -119,24 +190,19 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
     <a href="#funciones">Funciones</a>
     <a href="#instalar">Instalar</a>
   </div>
-  <!-- ⚠️ CAMBIAR POR TU URL DE APP -->
-  <a class="btn" href="https://pulsofitapp.lovable.app/">Instalar app</a>
+  <button class="btn" onclick="openModal()">Instalar app</button>
 </nav>
 
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="eyebrow"><span class="dot"></span>Disponible ahora · LATAM</div>
-  <h1>
-    <span class="w">La app que tu</span><br>
-    <span class="r">gym necesitaba.</span>
-  </h1>
+  <h1><span class="w">La app que tu</span><br><span class="r">gym necesitaba.</span></h1>
   <p class="hero-sub">Gestión inteligente para atletas, coaches y dueños de gimnasio. Todo en una sola app.</p>
   <div class="hero-actions">
-    <!-- ⚠️ CAMBIAR POR TU URL DE APP -->
-    <a class="btn btn-lg" href="https://pulsofitapp.lovable.app/" id="install-btn">
+    <button class="btn btn-lg" onclick="openModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Instalar PULSO gratis
-    </a>
+    </button>
     <span class="hero-hint">Sin APK · Sin tienda · Funciona como app nativa</span>
   </div>
   <div class="ekg-wrap"><canvas id="ekg"></canvas></div>
@@ -148,24 +214,9 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
   <div class="container">
     <div class="rv"><p class="slabel">¿Para quién?</p><h2>Hecho para todos en el gym.</h2><p class="ssub">Una plataforma que conecta a todos los actores del ecosistema fitness.</p></div>
     <div class="who-grid">
-      <div class="who-card rv">
-        <span class="who-icon">🏋️</span>
-        <div class="who-title">Atletas</div>
-        <div class="who-sub">Tu progreso, tu nutrición y tu acceso al gym desde un solo lugar.</div>
-        <div class="wfeat"><span class="wf">Coach IA 24/7</span><span class="wf">Récords personales y gráficas</span><span class="wf">Nutrición adaptativa</span><span class="wf">Check-in QR</span></div>
-      </div>
-      <div class="who-card rv">
-        <span class="who-icon">📋</span>
-        <div class="who-title">Coaches</div>
-        <div class="who-sub">Gestiona todos tus atletas sin hojas de cálculo ni WhatsApp.</div>
-        <div class="wfeat"><span class="wf">Panel de atletas en tiempo real</span><span class="wf">Planes asignables</span><span class="wf">Cobros por entrenamiento personal</span><span class="wf">Chat directo</span></div>
-      </div>
-      <div class="who-card rv">
-        <span class="who-icon">🏢</span>
-        <div class="who-title">Dueños de gym</div>
-        <div class="who-sub">Control total: membresías, cobros, acceso y métricas en tiempo real.</div>
-        <div class="wfeat"><span class="wf">Validación de pagos</span><span class="wf">Pagos en USDT (BinancePay)</span><span class="wf">Alianzas y competencias</span><span class="wf">Control de acceso QR</span></div>
-      </div>
+      <div class="who-card rv"><span class="who-icon">🏋️</span><div class="who-title">Atletas</div><div class="who-sub">Tu progreso, tu nutrición y tu acceso al gym desde un solo lugar.</div><div class="wfeat"><span class="wf">Coach IA 24/7</span><span class="wf">Récords personales y gráficas</span><span class="wf">Nutrición adaptativa</span><span class="wf">Check-in QR</span></div></div>
+      <div class="who-card rv"><span class="who-icon">📋</span><div class="who-title">Coaches</div><div class="who-sub">Gestiona todos tus atletas sin hojas de cálculo ni WhatsApp.</div><div class="wfeat"><span class="wf">Panel de atletas en tiempo real</span><span class="wf">Planes asignables</span><span class="wf">Cobros por entrenamiento personal</span><span class="wf">Chat directo</span></div></div>
+      <div class="who-card rv"><span class="who-icon">🏢</span><div class="who-title">Dueños de gym</div><div class="who-sub">Control total: membresías, cobros, acceso y métricas en tiempo real.</div><div class="wfeat"><span class="wf">Validación de pagos</span><span class="wf">Pagos en USDT (BinancePay)</span><span class="wf">Alianzas y competencias</span><span class="wf">Control de acceso QR</span></div></div>
     </div>
   </div>
 </section>
@@ -174,16 +225,16 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
 
 <section id="funciones" style="background:var(--dim)">
   <div class="container">
-    <div class="rv" style="text-align:center;max-width:540px;margin:0 auto 0"><p class="slabel">Funcionalidades</p><h2>Todo lo que necesitas.<br>Nada que no.</h2></div>
+    <div class="rv" style="text-align:center;max-width:540px;margin:0 auto"><p class="slabel">Funcionalidades</p><h2>Todo lo que necesitas.<br>Nada que no.</h2></div>
     <div class="feat-grid">
-      <div class="fc rv"><div class="fc-num">01</div><div class="fc-title">Coach IA</div><div class="fc-desc">Análisis de técnica, planes y feedback en tiempo real adaptado a ti.</div></div>
+      <div class="fc rv"><div class="fc-num">01</div><div class="fc-title">Coach IA</div><div class="fc-desc">Análisis de técnica, planes y feedback en tiempo real.</div></div>
       <div class="fc rv"><div class="fc-num">02</div><div class="fc-title">Nutrición IA</div><div class="fc-desc">Planes por fases del ciclo, ayuno intermitente y objetivo de peso.</div></div>
-      <div class="fc rv"><div class="fc-num">03</div><div class="fc-title">Acceso QR</div><div class="fc-desc">Solo miembros solventes entran. Control automático en la puerta.</div></div>
-      <div class="fc rv"><div class="fc-num">04</div><div class="fc-title">Pagos USDT</div><div class="fc-desc">Membresías y entrenos personales con BinancePay. Sin bancos.</div></div>
-      <div class="fc rv"><div class="fc-num">05</div><div class="fc-title">Chat Interno</div><div class="fc-desc">Mensajería en tiempo real entre todos los miembros del gym.</div></div>
-      <div class="fc rv"><div class="fc-num">06</div><div class="fc-title">Alianzas</div><div class="fc-desc">Conecta gyms, comparte feeds y crea competencias inter-gym.</div></div>
-      <div class="fc rv"><div class="fc-num">07</div><div class="fc-title">Citas</div><div class="fc-desc">Agenda con fisios, quiroprácticos y especialistas desde la app.</div></div>
-      <div class="fc rv"><div class="fc-num">08</div><div class="fc-title">Récords</div><div class="fc-desc">PRs, gráficas de progreso y ranking dentro del gym.</div></div>
+      <div class="fc rv"><div class="fc-num">03</div><div class="fc-title">Acceso QR</div><div class="fc-desc">Solo miembros solventes entran. Control automático.</div></div>
+      <div class="fc rv"><div class="fc-num">04</div><div class="fc-title">Pagos USDT</div><div class="fc-desc">Membresías y entrenos con BinancePay. Sin bancos.</div></div>
+      <div class="fc rv"><div class="fc-num">05</div><div class="fc-title">Chat Interno</div><div class="fc-desc">Mensajería en tiempo real entre miembros del gym.</div></div>
+      <div class="fc rv"><div class="fc-num">06</div><div class="fc-title">Alianzas</div><div class="fc-desc">Conecta gyms y crea competencias inter-gym.</div></div>
+      <div class="fc rv"><div class="fc-num">07</div><div class="fc-title">Citas</div><div class="fc-desc">Agenda con fisios, quiroprácticos y especialistas.</div></div>
+      <div class="fc rv"><div class="fc-num">08</div><div class="fc-title">Récords</div><div class="fc-desc">PRs, gráficas de progreso y ranking del gym.</div></div>
     </div>
   </div>
 </section>
@@ -204,39 +255,19 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
 
 <div class="rline"></div>
 
-<section id="instalar" class="install-bg">
+<section id="instalar" style="background:var(--dim)">
   <div class="container">
-    <div class="rv"><p class="slabel">Cómo instalar</p><h2>En 3 pasos.<br>Sin tienda de apps.</h2><p class="ssub">PULSO es una Progressive Web App. Se instala directo desde el navegador y funciona como app nativa.</p></div>
-    <div class="igrid rv">
-      <div class="ic">
-        <div class="ios-label">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.18 1.32-2.16 3.93.03 3.14 2.71 4.18 2.71 4.18l-.1.41zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-          iPhone / iPad
-        </div>
-        <div class="isteps">
-          <div class="istep"><div class="sn">1</div><div class="st">Abre <strong>Safari</strong> y ve a <strong>pulsofitapp.lovable.app</strong></div></div>
-          <div class="istep"><div class="sn">2</div><div class="st">Toca el ícono compartir <strong>⎋</strong> (abajo en Safari)</div></div>
-          <div class="istep"><div class="sn">3</div><div class="st">Selecciona <strong>"Agregar a pantalla de inicio"</strong></div></div>
-        </div>
-      </div>
-      <div class="ic">
-        <div class="ios-label">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.54-.38-.83-.22-.3.16-.42.54-.26.85L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25S6.31 12.75 7 12.75 8.25 13.31 8.25 14 7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
-          Android
-        </div>
-        <div class="isteps">
-          <div class="istep"><div class="sn">1</div><div class="st">Abre <strong>Chrome</strong> y ve a <strong>pulsofitapp.lovable.app</strong></div></div>
-          <div class="istep"><div class="sn">2</div><div class="st">Aparece el banner <strong>"Instalar PULSO"</strong> en la parte inferior</div></div>
-          <div class="istep"><div class="sn">3</div><div class="st">Toca <strong>"Instalar"</strong>. El ícono aparece en tu inicio.</div></div>
-        </div>
-      </div>
+    <div class="rv"><p class="slabel">Cómo instalar</p><h2>En 3 pasos.<br>Sin tienda de apps.</h2><p class="ssub">PULSO es una Progressive Web App. Se instala desde el navegador y funciona como app nativa.</p></div>
+    <div class="install-cards rv">
+      <div class="install-card"><div class="ic-label">📱 Android</div><div class="ic-text">Abre <strong>Chrome</strong> → visita la app → toca <strong>"Instalar"</strong> en el banner inferior.</div></div>
+      <div class="install-card"><div class="ic-label">🍎 iPhone</div><div class="ic-text">Abre <strong>Safari</strong> → visita la app → toca <strong>⎋ compartir</strong> → <strong>"Agregar a pantalla de inicio"</strong>.</div></div>
+      <div class="install-card"><div class="ic-label">💻 PC / Mac</div><div class="ic-text">Abre <strong>Chrome</strong> → visita la app → toca el ícono <strong>⊕</strong> en la barra de URL.</div></div>
     </div>
-    <div class="icta rv">
-      <a class="btn btn-lg" href="https://pulsofitapp.lovable.app/">
+    <div style="margin-top:2.5rem;text-align:center">
+      <button class="btn btn-lg" onclick="openModal()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Ir a la app
-      </a>
-      <span class="iurl">pulsofitapp.lovable.app</span>
+        Ver instrucciones paso a paso
+      </button>
     </div>
   </div>
 </section>
@@ -246,11 +277,11 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
 <section class="cta-s">
   <div class="container rv">
     <h2 class="w">Cada <span style="color:var(--red)">latido</span><br>cuenta.</h2>
-    <p class="cta-sub" style="margin-top:.8rem">Únete a la plataforma fitness que está cambiando LATAM.</p>
-    <a class="btn btn-lg" href="https://pulsofitapp.lovable.app/">
+    <p style="font-size:.95rem;color:var(--lgrey);margin:.8rem 0 2.5rem;font-weight:300">Únete a la plataforma fitness que está cambiando LATAM.</p>
+    <button class="btn btn-lg" onclick="openModal()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Instalar PULSO ahora
-    </a>
+    </button>
   </div>
 </section>
 
@@ -266,7 +297,25 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
 </footer>
 
 <script>
-// EKG
+function openModal(){
+  const isIOS=/iPad|iPhone|iPod/i.test(navigator.userAgent);
+  const isAndroid=/Android/i.test(navigator.userAgent);
+  tab(isIOS?'iphone':isAndroid?'android':'pc');
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function tab(name){
+  ['android','iphone','pc'].forEach(n=>{
+    document.getElementById('tb-'+n).classList.toggle('on',n===name);
+    document.getElementById('tp-'+n).classList.toggle('on',n===name);
+  });
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
 (function(){
   const c=document.getElementById('ekg');if(!c)return;
   const ctx=c.getContext('2d');let t=0,go=true;
@@ -287,20 +336,9 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem;display:flex;fl
   new IntersectionObserver(e=>{go=e[0].isIntersecting;if(go)draw()}).observe(c);
 })();
 
-// Scroll reveal
 (function(){
   const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-})();
-
-// PWA install prompt (Android Chrome)
-(function(){
-  let dp=null;
-  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;
-    document.querySelectorAll('#install-btn,.btn').forEach(b=>{
-      b.addEventListener('click',ev=>{if(dp){ev.preventDefault();dp.prompt();dp.userChoice.then(()=>dp=null)}},{once:true})
-    });
-  });
 })();
 </script>
 </body>
